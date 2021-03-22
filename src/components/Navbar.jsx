@@ -6,13 +6,13 @@ function Navbar() {
       <div>
          <div className='nav-list'>
             <div>
-               <NavLink to='/'>Главная</NavLink>
+               <NavLink className='nav_item' to='/'>Главная</NavLink>
             </div>
             <div>
-               <NavLink to='/liked'>Понравились</NavLink>
+               <NavLink className='nav_item' to='/liked'>Понравились</NavLink>
             </div>
             <div>
-               <NavLink to='/archive'>Архив</NavLink>
+               <NavLink className='nav_item' to='/archive'>Архив</NavLink>
             </div>
          </div>
       </div>

@@ -32,7 +32,7 @@ function App() {
     setTimeout(() => {
       setModalClass('hide');
       setModalMessage('');
-    }, 1000);
+    }, 1500);
   }
 
   // достаем все новости при инициализации

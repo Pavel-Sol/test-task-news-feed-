@@ -1,0 +1,43 @@
+li,
+ul {
+  list-style-type: none;
+}
+
+.news__wrap {
+  margin-bottom: 50px;
+  text-align: justify;
+  border: 1px solid rgb(43, 42, 42);
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.news__title {
+  margin-bottom: 10px;
+  text-align: center;
+}
+.news__text {
+  width: 100%;
+  text-align: justify;
+}
+
+.news__control {
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+}
+
+button {
+  margin-right: 10px;
+  padding: 10px;
+  border-radius: 3px;
+  font-size: 16px;
+  background-color: rgb(31, 31, 238);
+  color: #fff;
+}
+
+.like__wrap {
+  width: 32px;
+  height: 32px;
+  display: inline;
+  cursor: pointer;
+}

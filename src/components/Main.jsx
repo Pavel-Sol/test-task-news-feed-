@@ -1,27 +1,42 @@
-
+import './page.css'
+import likeTrue from './../assets/img/like-true.png'
+import likeFalse from './../assets/img/like-false.png'
 
 function Main (props) {
+   let data = props.mainNews.sort((a,b) => a.id - b.id)
+   
    return (
      <div>
          <h1>
-            MAIN
+            ГЛАВНАЯ
          </h1>
          <ul>
             {
-               props.mainNews.length && props.mainNews.map(item => {
-                  return <li>
-                           <div>
-                               {item.title}
+               data.length && props.mainNews.map(item => {
+                  return <li className='news__wrap'>
+                           <div className='news__body'>
+                              <h3 className='news__title'>
+                                 {item.title}
+                              </h3>
+                              <div>
+                                 {item.body}
+                              </div>
                            </div>
-                           <button onClick={() => props.moveFromMainToArchive(item)}>в архив</button>
-                           <button onClick={() => props.deleteFromMain(item)}>удалить</button>
-                           <button onClick={() => props.toggleLike(item)}>{
-                              (props.likeNews.filter((el) => el.id === item.id).length > 0)
-                              ? 'убрать лайк'
-                              : 'поставить лайк'
-                           }</button>
+                           <div className='news__control'>
+                              <button onClick={() => props.moveFromMainToArchive(item)}>в архив</button>
+                              <button onClick={() => props.deleteFromMain(item)}>удалить</button>
+                              <div className='like__wrap' onClick={() => props.toggleLike(item)}>{
+                                 (props.likeNews.filter((el) => el.id === item.id).length > 0)
+                                 ? <img src={likeTrue}/>
+                                 : <img src={likeFalse}/>
+                              }</div>
+                           </div>
                         </li>
                })
+            }
+
+            {
+               !data.length && <h2>ЗДЕСЬ ПОКА ПУСТО</h2>
             }
          </ul>
      </div>
